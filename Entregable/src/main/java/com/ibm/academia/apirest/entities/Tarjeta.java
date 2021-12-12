@@ -19,7 +19,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
-
+ 
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,7 +38,6 @@ public class Tarjeta implements Serializable {
 	 
 	@Column(name = "nombre", unique = true, nullable = false, length=80)
 	private String nombre;
-
 	
 	@Column(name = "edad_minima", nullable = false)
 	private Integer edadMinima;
@@ -63,32 +62,6 @@ public class Tarjeta implements Serializable {
 	public void addPasion(Pasion pasion){
         this.pasiones.add(pasion);
     }
-
-	
-	
-	
-
-	public Tarjeta(Integer id, String nombre, Integer edadMinima, Integer edadMaxima, Integer salarioMinimo,
-			Integer salarioMaximo, Set<Pasion> pasiones) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.edadMinima = edadMinima;
-		this.edadMaxima = edadMaxima;
-		this.salarioMinimo = salarioMinimo;
-		this.salarioMaximo = salarioMaximo;
-		this.pasiones = pasiones;
-	}
-
-
-
-
-
-	public Tarjeta() {
-		super();
-	}
-
-
 
 
 
@@ -125,87 +98,7 @@ public class Tarjeta implements Serializable {
 
 
 
-	public Integer getId() {
-		return id;
-	}
 
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-
-	public Integer getEdadMinima() {
-		return edadMinima;
-	}
-
-
-
-	public void setEdadMinima(Integer edadMinima) {
-		this.edadMinima = edadMinima;
-	}
-
-
-
-	public Integer getEdadMaxima() {
-		return edadMaxima;
-	}
-
-
-
-	public void setEdadMaxima(Integer edadMaxima) {
-		this.edadMaxima = edadMaxima;
-	}
-
-
-
-	public Integer getSalarioMinimo() {
-		return salarioMinimo;
-	}
-
-
-
-	public void setSalarioMinimo(Integer salarioMinimo) {
-		this.salarioMinimo = salarioMinimo;
-	}
-
-
-
-	public Integer getSalarioMaximo() {
-		return salarioMaximo;
-	}
-
-
-
-	public void setSalarioMaximo(Integer salarioMaximo) {
-		this.salarioMaximo = salarioMaximo;
-	}
-
-
-
-	public Set<Pasion> getPasiones() {
-		return pasiones;
-	}
-
-
-
-	public void setPasiones(Set<Pasion> pasiones) {
-		this.pasiones = pasiones;
-	}
 
 
 

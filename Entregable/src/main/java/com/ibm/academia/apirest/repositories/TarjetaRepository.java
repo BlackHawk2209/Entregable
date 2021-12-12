@@ -10,7 +10,7 @@ import com.ibm.academia.apirest.entities.Tarjeta;
 @Repository
 public interface TarjetaRepository extends CrudRepository<Tarjeta, Integer>   {
 
-	@Query(value = "SELECT * FROM banamex.tarjetas WHERE pasion = ?1 WHERE ?2 BETWEEN salario_minimo AND salario_maximo WHERE ?3 BETWEEN edad_minima AND edad_maxima", nativeQuery = true)
+	@Query(value = "SELECT * FROM banamex.tarjetas WHERE pasion = ?1 AND ?2 BETWEEN salario_minimo AND salario_maximo AND ?3 BETWEEN edad_minima AND edad_maxima", nativeQuery = true)
 	public Iterable<Tarjeta> buscarTarjetaAdecuada(String pasion, Integer salario, Integer edad);
 	
 }

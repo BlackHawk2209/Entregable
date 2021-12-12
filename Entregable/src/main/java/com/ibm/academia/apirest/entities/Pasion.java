@@ -25,11 +25,6 @@ import lombok.Setter;
 public class Pasion implements Serializable{
 
 
-	public Pasion() {
-	}
-
-
-
 	public Pasion(Integer id, String pasionNombre, Set<Tarjeta> tarjetas) {
 		this.id = id;
 		this.pasionNombre = pasionNombre;
