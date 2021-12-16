@@ -10,19 +10,22 @@ import com.ibm.academia.apirest.entities.Tarjeta;
 import com.ibm.academia.apirest.repositories.TarjetaRepository;
 
 @Service
-public class TarjetaDAOImpl extends GenericoDAOImpl<Tarjeta, TarjetaRepository> implements TarjetaDAO{
-
+public class TarjetaDAOImpl implements TarjetaDAO
+{
 	@Autowired
-	public TarjetaDAOImpl(TarjetaRepository repository) {
-		super(repository);
-	}
+	TarjetaRepository tarjetaRepository;
 
 	@Override
 	@Transactional(readOnly = true)
 	public Iterable<Tarjeta> buscarTarjetaAdecuada(String pasion, Integer salario, Integer edad) {
-		return buscarTarjetaAdecuada(pasion, salario, edad);
+		return tarjetaRepository.buscarTarjetaAdecuada(pasion, salario, edad);
 	}
 
+	@Override
+	@Transactional
+	public Tarjeta guardar(Tarjeta tarjeta) {
+		return tarjetaRepository.save(tarjeta);
+	}
 	
 	
 }
